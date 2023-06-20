@@ -1,8 +1,10 @@
 // johannes.js
 
-private firstname = "Johannes"
-private surname = "Potgieter"
-public role = "Intern"
+const private_firstname = "Johannes"
+const private_surname = "Potgieter"
+const public_role = "Intern"
 
-private display= firstname + " " + surname + " (" + role + ")"
-document.querySelector('#johannes').innerText = display
+export const private_display = private_firstname + " " + private_surname+ " (" + public_role + ")"
+document.querySelector('#johannes').innerText = private_display
+
+console.log(private_display);
