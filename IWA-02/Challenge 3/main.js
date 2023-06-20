@@ -1,15 +1,26 @@
-// Only change code below this line
-var a = 5;
-var b = 10;
-var c = "I'am  a";
-// Only change code above this line
+/* 
+It is important to show the following message in order to:
+- to assure users
+- to scare hackers
+- to impress investors
+*/
 
-a = a + 1;
-b = b + 5;
-c = c + " String!";
+console.warn('Security scan starting');
 
-console.log(a);
-console.log(b);
-console.log(c);
+/* It is important to let user know when they can close the page  */
+
+console.info('Please wait for scan to complete before closing the browser.');
 
 
+// // 
+// It is important to show the following message in order to:
+// - to assure users
+// - to scare hackers
+// - to impress investors
+// //
+
+// console.warn(Security scan starting)
+
+// /* It is important to let user know when they can close the page  /*
+
+// cnosole.info('Please wait for scan to complete before closing the browser.)
