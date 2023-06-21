@@ -29,7 +29,7 @@ let pens = 5 * parseInt('0')
 
 
 if (shoes + batteries + pens + shirts <= 1000) {
-	
+
 	if (location = 'NAM' && customers < 2) {
 
 		if (location = 'RSA'){
@@ -38,14 +38,10 @@ if (shoes + batteries + pens + shirts <= 1000) {
 	}  
 		
 }
-
-
-
-	
-		 	
+	 	
 
 if (shipping = 0 && customers !== 1) { console.log(WARNING) }
 
 shipping = 400;
 
-location === 'NK' ? console.warn('WARNING') : console.log('Price: ', shoes + batteries + pens + shirts +  toys + shipping)
+location === 'NK' ? console.warn('WARNING') : console.log('Price: ' + currency, shoes + batteries + pens + shirts +  toys + shipping)
