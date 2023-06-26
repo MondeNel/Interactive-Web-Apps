@@ -1,6 +1,6 @@
 const date = 2050;
-let status = 'student';
-let count = -1;
+let status = 'parent';
+let count = 0;
 
 
 
@@ -13,7 +13,7 @@ if (date == 2050) {
 	count = count + 4;
 	
 
-	if (status = "student") {
+	if (status !== "student") { 
 	  console.log('June', 'Youth Day');
 		count = count + 1;
 		
