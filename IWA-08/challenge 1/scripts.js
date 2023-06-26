@@ -13,28 +13,45 @@ const sarahPostal = '0310'
 
 // Only change below this line
 
-const leo {
-	name = leoName + leoSurname
-	balance = leoBalance
-	access id = 47afb389-8014-4d0b-aff3-e40203d2107f
-	age = 24
-	address {
-		number = leoNumber
-		street = leoStreet
-		postal-code = leoPostal
+const leo = {
+	name : leoName,
+	balance : leoBalance,
+	access_id : '47-afb389-8014-4-d0b-aff3-e40203d2107f',
+	age : 24,
+	address : {
+		number : leoNumber,
+		street : leoStreet,
+		postalCode : leoPostal,
 	}
 }
+// console.log(leo.name)
+// console.log(leo.balance)
+// console.log(leo.access_id)
+// console.log(leo.age)
+// console.log(leo.address.number)
+// console.log(leo.address.street)
+// console.log(leo.address.postalCode)
 
-const sarah {
-	name = saraName + saraSurname
-	age = 62
-	access id = 6b279ae5-5657-4240-80e9-23f6b635f7a8
-	balance = sarahBalance
-	address {
-		number = sarahNumber
-		street = sarahStreet
-		postal-code = sarahPostal
+
+const sarah = {
+	name : sarahName + sarahSurname,
+	age : 62,
+	access_id : '6b279ae5-5657-4240-80e9-23f6b635f7a8',
+	balance : sarahBalance,
+	address : {
+		number : sarahNumber,
+		street : sarahStreet,
+		postal_code : sarahPostal,
 	}
+}
+// console.log(sarah.name)
+// console.log(sarah.age)
+// console.log(sarah.access_id)
+// console.log(sarah.balance)
+// console.log(sarah.address.number)
+// console.log(sarah.address.street)
+// console.log(sarah.address.postal_code)
 
-console.log(leo, leo[address][postal-code])
-console.log(sarah, sarah[address][postal-code])
+console.log(leo, leo.address.postalCode)
+console.log(sarah, sarah.address.postal_code)
+
