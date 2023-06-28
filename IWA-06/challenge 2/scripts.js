@@ -9,11 +9,15 @@ const minuteOfDay = 00; //there's a way to solve this, by declaring the (const m
 // Only change below this line
 
 if (hourOfDay && minuteOfDay !== null) (hourOfDay !== '00') && (minuteOfDay !== '00'); {
+
 	const taxAsDecimal = (parseInt(tax) % parseInt('100') * 8)
+
 	const startingAfterTax = salary * parseInt('1') - taxAsDecimal
+
 	const balance = startingAfterTax - transport - food - rent
 	
 	console.log('R '+ balance.toFixed(2))
 }
 	
+
 
