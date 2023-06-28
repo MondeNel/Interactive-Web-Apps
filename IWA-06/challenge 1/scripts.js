@@ -3,7 +3,8 @@ const secondaryPhone = '0219131568';
 
 // Only change below this line
 
-let number = 'O748105141'; // Assign a value to number
+let number = undefined; // Assign a value to number
+console.log(parseInt(number));
 
 if(primaryPhone === parseInt(number)){
     console.log('Primary phone is valid numerical string:', true);
