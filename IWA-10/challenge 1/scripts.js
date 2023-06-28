@@ -53,7 +53,13 @@ const futureId = 9
 
 // Do not change code above this comment
 
-// console.log(holidays.futureId.name || 'ID {futureId} not created yet')
+if(holidays === futureId){
+    console.log(futureId)
+}else {
+   console.log(`ID ${futureId} not created yet`)
+}
+
+
 
 let copied = holidays[6].name
 console.log(copied)
