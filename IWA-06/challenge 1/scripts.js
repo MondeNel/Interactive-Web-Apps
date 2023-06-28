@@ -1,12 +1,18 @@
-const primaryPhone = 'O748105141'
-const secondaryPhone = '0219131568'
+const primaryPhone = 'O748105141';
+const secondaryPhone = '0219131568';
 
 // Only change below this line
-let number;
 
-const primaryValid = (number !== parseInt(primaryPhone) ? true : false)
-const secondaryValid = (number !==  parseInt(secondaryPhone) ? true : false)
+let number = 'O748105141'; // Assign a value to number
 
+if(primaryPhone === parseInt(number)){
+    console.log('Primary phone is valid numerical string:', true);
+}else {
+    console.log('Primary phone is not valid numerical string:', false);
+}
 
-console.log('Primary phone is valid numerical string:', primaryValid)
-console.log('Secondary phone is valid numerical string:', secondaryValid )
+if(secondaryPhone !== parseInt(number)){
+    console.log('Secondary phone is valid numerical string:', true);
+}else {
+    console.log('Secondary phone is not valid numerical string:', false);
+}
