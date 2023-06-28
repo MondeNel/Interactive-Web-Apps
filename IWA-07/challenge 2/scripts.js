@@ -8,8 +8,9 @@ if (nickName === "Timmy" || nickName === undefined) {
 }
 
 /**
- * Another expression
+ * Another expression if nickName was not assigned a value.
  */
+
 const nicknameExample = null;
 const firstnameExample = "Timothy";
 
