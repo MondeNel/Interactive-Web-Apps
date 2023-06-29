@@ -117,21 +117,13 @@ const lastHolidayTimestamp = Math.max(
 const firstHolidayDate = new Date(firstHolidayTimestamp);
 const lastHolidayDate = new Date(lastHolidayTimestamp);
 
-let firstDay = firstHolidayDate.getDate();
-let firstMonth = firstHolidayDate.getMonth();
-let lastDay = lastHolidayDate.getDate();
-let lastMonth = lastHolidayDate.getMonth();
+const firstDay = (firstHolidayDate.getDate()); // ("0" + firstHolidayDate.getDate()).slice(-2);
+const firstMonth = (firstHolidayDate.getMonth()); // ("0" + (firstHolidayDate.getMonth() + 1)).slice(-2);
+const lastDay = (lastHolidayDate.getDate()); // ("0" + lastHolidayDate.getDate()).slice(-2);
+const lastMonth = (lastHolidayDate.getMonth()); // ("0" + (lastHolidayDate.getMonth() + 1)).slice(-2);
 
-console.log(typeof firstDay);
-console.log(firstMonth);
-console.log(lastDay);
-console.log(lastMonth);
+console.log(`0${firstDay} / ${firstMonth}1 / ${currentYear}`); // (`${firstDay}/${firstMonth}/${currentYear}`);
+console.log(`${lastDay} / ${lastMonth} / ${currentYear}`); // (`${lastDay}/${lastMonth}/${currentYear}`);
 
-
-
-
-console.log(`${firstDay}/${firstMonth}/${currentYear}`)
-console.log(`${lastDay}/${lastMonth}/${currentYear}`)
-
-// const randomHoliday = holidays[Math.random]
-// console.log(randomHoliday.date)
+const randomHoliday = holidays[Math.floor(Math.random() * Object.keys(holidays).length)];
+console.log(randomHoliday.date);
