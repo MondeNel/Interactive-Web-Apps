@@ -29,38 +29,48 @@ const STATUS_MAP = {
 
 // Edit below line 
 
-const status1 = document.querySelector(".status");
-const reserve1 = document.querySelector(".reserve");
-const checkOut1 = document.querySelector(".checkout");
+let status1 = document.querySelector(".status");
+let reserve1 = document.querySelector(".reserve");
+let checkOut1 = document.querySelector(".checkout");
 
-const checkIn1 = document.querySelector(".checkin");
-const status2 = document.querySelector(".status");
-const reserve2 = document.querySelector(".reserve");
-const checkOut2 = document.querySelector(".checkout");
-const checkIn2 = document.querySelector(".checkin");
+let checkIn1 = document.querySelector(".checkin");
+let status2 = document.querySelector(".status");
+let reserve2 = document.querySelector(".reserve");
+let checkOut2 = document.querySelector(".checkout");
+let checkIn2 = document.querySelector(".checkin");
 
-const status3 = document.querySelector(".status");
-const reserve3 = document.querySelector(".reserve");
-const checkOut3 = document.querySelector(".checkout");
-const checkIn3 = document.querySelector(".checkin");
-
-
+let status3 = document.querySelector(".status");
+let reserve3 = document.querySelector(".reserve");
+let checkOut3 = document.querySelector(".checkout");
+let checkIn3 = document.querySelector(".checkin");
 
 
 // checkin.0.color = none
-// status.0.style.color = STATUS_MAP.status.color
-// reserve.0 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
-// checkout.0 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
-// checkin.0 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
+status1.style.color = STATUS_MAP.shelf.color;
+reserve1 = STATUS_MAP.reserved.canReserve ? 'enabled' : 'disabled';
+checkOut1 = STATUS_MAP.checkedOut.canCheckout ? 'enabled' : 'disabled';
+checkIn1 = STATUS_MAP.checkedOut.canCheckIn ? 'enabled': 'disabled';
+
+
+button = document.querySelector("reserve");
+console.log(reserve1.disabled = false);
+button = document.querySelector("checkout");
+console.log(checkOut1.disabled = false);
+button = document.querySelector("checkin");
+console.log(checkIn1.disabled = true);
+   
+
+
 
 // checkin.1.color = none
-// status.1.style.color = STATUS_MAP.status.color
-// reserve.1 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
-// checkout.1 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
-// checkin.1 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
+status2.style.color = STATUS_MAP.shelf.color
+reserve2 = STATUS_MAP.reserved.canReserve ? 'disabled' : 'enabled'
+checkOut2 = STATUS_MAP.checkedOut.canCheckout ? 'enabled' : 'disabled'
+checkIn2 = STATUS_MAP.checkedOut.canCheckIn ? 'enabled' : 'disabled'
+
 
 // checkin.2.color = none
-// status.2.style.color = STATUS_MAP.status.color
-// reserve.2 = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
-// checkout.2 = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
-// checkin.2 = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
+status3.style.color = STATUS_MAP.shelf.color
+reserve3 = STATUS_MAP.reserved.canReserve ? 'enabled' : 'disabled'
+checkOut3 = STATUS_MAP.checkedOut.canCheckout ? 'enabled' : 'disabled'
+checkIn3 = STATUS_MAP.checkedOut.canCheckIn ? 'enabled' : 'disabled'
