@@ -65,17 +65,21 @@ const correctMinutes = correctDate.getMinutes();
 
 const isEarlier = copied.date;
 
-
-if (holidays == futureId) {
+// I used a conditional statement to check if the value of holidays do equal to futureID.
+if (holidays == futureId) {  
   console.log(futureId);
 } else {
   console.log(`ID ${futureId} not created yet`);
 }
 
+// Check if the new date (copied.date) is earlier than or equal to the date of the holidays array (holidays[6])
+// I used the AND logical operator to check for the first falsy value.
 if (isEarlier && copied.date <= holidays[6].date) {
   console.log("New date is earlier:", copied.date == holidays[6].date);
 }
 
+// Check if the condition isEarlier is true and if copied.date is different from correctDate.
+// If both conditions are met, it logs a message to the console and performs a comparison between copied.id and correctDate.
 if (isEarlier && copied.date !== correctDate) {
   console.log("ID change:", copied.id === correctDate);
 }
@@ -88,6 +92,18 @@ if (isEarlier && copied.date !== correctDate) {
   console.log("Date change:", copied.date.getDate());
 }
 
+/**
+ * In the above code, we use conditional statements and logical operators adding decision-making, branching, and control flow capabilities
+ * Which will allow us to perform different expressions in the code base.
+ */
+
+
+/**
+ * We retrieve the date values from the holidays array using dot notation and the index number for each element
+ * We uses the parseInt() function to convert the date values into integers
+ * For each date, it calls the .getTime() method to obtain the corresponding timestamp value
+ * The Math.min() function is then used to find the minimum value among all the timestamps.
+*/
 
 const firstHolidayTimestamp = Math.min(
   (parseInt(holidays[0].date)),
@@ -101,6 +117,12 @@ const firstHolidayTimestamp = Math.min(
   (parseInt(holidays[8].date.getTime()))
 );
 
+/**
+ * We retrieve the date values from the holidays array using dot notation and the index number for each element
+ * We uses the parseInt() function to convert the date values into integers
+ * For each date, it calls the .getTime() method to obtain the corresponding timestamp value
+ * The Math.max() function is then used to find the minimum value among all the timestamps.
+*/
 
 const lastHolidayTimestamp = Math.max(
   (parseInt(holidays[0].date)),
@@ -114,7 +136,8 @@ const lastHolidayTimestamp = Math.max(
   (parseInt(holidays[8].date.getTime()))
 );
 
-const firstHolidayDate = new Date(firstHolidayTimestamp);
+//This new Date object is corresponded to the current year, which will allow us to perform different requests based on the holiday array.
+const firstHolidayDate = new Date(firstHolidayTimestamp); 
 const lastHolidayDate = new Date(lastHolidayTimestamp);
 
 const firstDay = (firstHolidayDate.getDate()); // ("0" + firstHolidayDate.getDate()).slice(-2);
@@ -127,3 +150,4 @@ console.log(`${lastDay} / ${lastMonth} / ${currentYear}`); // (`${lastDay}/${las
 
 const randomHoliday = holidays[Math.floor(Math.random() * Object.keys(holidays).length)];
 console.log(randomHoliday.date);
+
