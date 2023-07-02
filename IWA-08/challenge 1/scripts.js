@@ -16,7 +16,7 @@ const sarahPostal = '0310';
 const leo = {
   name: leoName,
   balance: leoBalance,
-  access_id: '47-afb389-8014-4-d0b-aff3-e40203d2107f',
+  access_id: '47-afb389-8014-4-d0b-aff3-e40203d2107f', // I changed this to a string, because a string can consist of numbers and letters
   age: 24,
   address: {
     number: leoNumber,
@@ -37,7 +37,7 @@ console.log(leo.address.postalCode)
 const sarah = {
   name: `${sarahName} ${sarahSurname}`,
   age: 62,
-  access_id: '6b279ae5-5657-4240-80e9-23f6b635f7a8',
+  access_id: '6b279ae5-5657-4240-80e9-23f6b635f7a8', // I changed this to a string, because a string can consist of numbers and letters
   balance: sarahBalance,
   address: {
     number: sarahNumber,
@@ -53,7 +53,7 @@ console.log(sarah.address.number)
 console.log(sarah.address.street)
 console.log(sarah.address.postal_code)
 
-console.log(leo);
+console.log(leo); 
 console.log(leo.address.postalCode);
 
 console.log(sarah);
