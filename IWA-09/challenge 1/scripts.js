@@ -30,10 +30,10 @@ const rent = {
 
 // You can change below however you want
 
-const taxAsDecimal = parseInt(tax[913]) / 100
+const taxAsDecimal = parseInt(tax[913]) / 100 // I changed the string to a Number data type to perform calculations.
 console.log(taxAsDecimal);
 
-const startingAfterTax = salary * (1 - taxAsDecimal);
+const startingAfterTax = salary * (1 - taxAsDecimal); 
 console.log(startingAfterTax);
 
 const type = `${lodging} ${size}`
