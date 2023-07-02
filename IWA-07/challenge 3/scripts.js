@@ -10,11 +10,11 @@ const divider = '----------------------------------';
 
 // Only change below this line
 
-const owed = parseInt(leoBalance) + parseInt(sarahBalance);
+const owed = parseInt(leoBalance) + parseInt(sarahBalance); // I used parseInt to convert a string to a number to calculate the result
 // console.log(`R ${owed.toFixed(2)}`);
 
 
-const leo = `${leoName} ${leoSurname} Owed: R${leoBalance  * - 1}`;
+const leo = `${leoName} ${leoSurname} Owed: R${leoBalance  * - 1}`; // I made use of a template literal for much better readng of code and also to perform some calculations
 // console.log(leo)
 
 
@@ -27,5 +27,7 @@ const total = `Total amount owed: R ${owed * - 1}`;
 
 
 const result = leo + '\n' + sarah  + '\n' + divider + '\n' + `   Total amount owed: R ${owed.toFixed(2) * - 1}` + '\n' + divider;
+// in the above code, I used new line character to perform the output results. 
+//And rounded the number to two decimals by using the toFixed method which converts the number to a string.
 
 console.log(result);
