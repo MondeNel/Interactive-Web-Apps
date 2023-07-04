@@ -32,9 +32,9 @@ const STATUS_MAP = {
 let status1 = document.querySelector("#book1 .status");
 let reserve1 = document.querySelector("#book1 .reserve");
 let checkOut1 = document.querySelector("#book1 .checkout");
-
-
 let checkIn1 = document.querySelector("#book2 .checkin");
+
+
 let status2 = document.querySelector("#book2 .status");
 let reserve2 = document.querySelector("#book2 .reserve");
 let checkOut2 = document.querySelector("#book2 .checkout");
