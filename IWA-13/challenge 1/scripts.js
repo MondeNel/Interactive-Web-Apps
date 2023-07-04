@@ -13,41 +13,55 @@ let calculated = '1'
  * It should be typeof calculated === 'string' to check if calculated is a string.
  */
 
-function logCalc(calculated) {
+/** This is an example of a function I wrote myself to compare it to the challenge.
+ * 
+ * let firstName = "Monde";
 
-  let isString;
-
-  if (typeof calculated === 'string') {
-    isString = 'numerical-string';
-  } else {
-    isString = 'not a numerical-string';
-  }
-
-  let calculatedAsNumber;
-
-  if (isString === 'numerical-string') {
-    calculatedAsNumber = parseInt(calculated);
-  } else {
-    calculatedAsNumber = calculated;
-  }
-
+  function myFnc (){
+    let lastname = 'Nel';
+    
+    console.log(firstName + " " + lastname);
 }
+myFnc(); 
+*/
 
 
-const = calcUser () => {
-  logCalc
-  if (calculated > 2) user = 'John'
-  if (calculated > 2) state = 'requesting'
-  if (calculated > 3) state = 'idle'
+let logCalc = () => { 
+    
+  // we performed a tenary expression to check if calculated is a numerical string
+  let isString = typeof calculated === "string" ?  'numerical-string' : 'not a muerical-string' ; 
+
+
+  // we re-assigned it to a number(Integer), to perform some calculation.
+  let calculatedAsNumber = parseInt(calculated);
+
+  console.log(calculated === calculatedAsNumber + 1); 
 }
+// logCalc();
 
-const = checkUser () => {
-	if (user && state === 'requesting') {
+
+let calcUser =  () => { // the variable was not defined/assigned properly. 
+
+  if (calculated.length <= 2) user = 'John';  // logical operator less than or  equal too.
+  if (calculated.length >= 2) state = 'requesting';
+  if (calculated.length >= 3) state = 'idle';
+
+  // console.log(user);
+  // console.log(state);
+  // console.log(state);
+}
+// calcUser();
+
+let checkUser = () => {
+	if (user && state !== 'requesting') {
 		console.log(`User: ${user} (${calculated})`)
 	}
+  // console.log(user);
+  // console.log(state);
 }
+// checkUser();
 
-// Only allowed to change code above
+// // Only allowed to change code above
 
 checkUser()
 calcUser()
