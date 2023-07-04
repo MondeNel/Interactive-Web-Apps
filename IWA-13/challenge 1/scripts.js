@@ -4,12 +4,35 @@ let calculated = '1'
 
 // Only allowed to change below
 
+/**
+ * 
+ * @param {The variable calculated is not defined within the function. 
+ * we will need to either pass it as a parameter or define it within the function for the code to work.} calculated 
+ * 
+ * The conditional statement typeof calculated is missing a comparison operator.
+ * It should be typeof calculated === 'string' to check if calculated is a string.
+ */
 
-const = logCalc () => { 
-    const isString = typeof calculated = 'numerical-string' 
-    const calculatedAsNumber = isString ? calculated : parseNumber(calculated)
-    calculated === calculatedAsNumber + 1 
+function logCalc(calculated) {
+
+  let isString;
+
+  if (typeof calculated === 'string') {
+    isString = 'numerical-string';
+  } else {
+    isString = 'not a numerical-string';
+  }
+
+  let calculatedAsNumber;
+
+  if (isString === 'numerical-string') {
+    calculatedAsNumber = parseInt(calculated);
+  } else {
+    calculatedAsNumber = calculated;
+  }
+
 }
+
 
 const = calcUser () => {
   logCalc
