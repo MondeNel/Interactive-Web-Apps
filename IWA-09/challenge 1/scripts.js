@@ -31,14 +31,16 @@ const rent = {
 // You can change below however you want
 
 const taxAsDecimal = parseInt(tax[913]) / 100 // I changed the string to a Number data type to perform calculations.
-console.log(taxAsDecimal);
+// console.log(taxAsDecimal);
 
 const startingAfterTax = salary * (1 - taxAsDecimal); 
-console.log(startingAfterTax);
+// console.log(startingAfterTax);
 
-const type = `${lodging} ${size}`
+const type = `${size}-${lodging}`
 console.log(type);
 
-const balance = (startingAfterTax) - (expenses.transport) - (expenses.food) - (rent["large-apartment"]);
+
+const balance = (startingAfterTax) - (expenses.transport) - (expenses.food) - (rent[type]);
 console.log('R',balance.toFixed(2));
+
 
