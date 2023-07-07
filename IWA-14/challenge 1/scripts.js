@@ -1,14 +1,17 @@
-firstName = 'John';
-age = 35;
-hobby = 'Coding';
+// I first overwite and assign the variables to a data type called 'const'
+const firstName = 'John';
+const age = 35;
+const hobby = 'Coding';
 
-const logTwice = () => {
-  console(parameter)
-  console(parameter)
-}
+console.log(firstName, age, hobby);
 
-function hobby () {
-  logTwice(`Hello, ${name} (${age}). I love ${hobby}!`)
-}
+// const logTwice = () => {
+//   console(parameter)
+//   console(parameter)
+// }
 
-hobby()
+// function hobby () {
+//   logTwice(`Hello, ${name} (${age}). I love ${hobby}!`)
+// }
+
+// hobby()
