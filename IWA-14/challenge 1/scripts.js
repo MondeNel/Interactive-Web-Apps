@@ -3,15 +3,16 @@ const firstName = 'John';
 const age = 35;
 const hobby = 'Coding';
 
-console.log(firstName, age, hobby);
 
-// const logTwice = () => {
-//   console(parameter)
-//   console(parameter)
-// }
+// I declared the parameters and fixed the console.log, to log out the output and recall the function
+const logTwice = () => {
+  console.log(firstName)
+  console.log(age)
+}
+logTwice();
 
 // function hobby () {
-//   logTwice(`Hello, ${name} (${age}). I love ${hobby}!`)
+//   logTwice(`Hello, ${firstName} (${age}). I love ${hobby}!`)
 // }
 
 // hobby()
