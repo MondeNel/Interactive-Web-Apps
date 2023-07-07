@@ -1,7 +1,7 @@
 // I first overwite and assign the variables to a data type called 'const'
 const firstName = 'John';
 const age = 35;
-let hobby = 'Coding';
+const hobby = 'Coding';
 
 
 // The logTwice function now takes a message parameter and logs it twice using console.log(message).
@@ -11,11 +11,11 @@ const logTwice = (message) => {
 }
 
 /**
- * The hobby function remains the same, 
+ * I've reassigned hobby to myHobby function because, hobby was already declared. 
  * and when called, it invokes the modified logTwice function with the desired message.
  */
-function hobby () {
+function myhobby () {
   logTwice(`Hello, ${firstName} (${age}). I love ${hobby}!`);
 } 
 
-hobby();
+myhobby();
