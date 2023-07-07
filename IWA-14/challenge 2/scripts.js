@@ -1,8 +1,14 @@
 // script.js
 
-function add = a, b => { a + b }
+/**
+ * I reassigned and declared the arrow function first by assigning it with a variable
+ * and also by defining an arrow function expression you dont need the curly brackets to perform an expression
+ */ 
 
-function multiply = a, b => { a - b }
+
+let add = (a, b) => a + b 
+
+let multiply = (a, b) => a - b 
 
 function internal() {
 	const added = this.add(this.a, this.b)
@@ -10,7 +16,7 @@ function internal() {
 	return this
 }
 
-// Not allowed to change below this
+// // Not allowed to change below this
 
 const example1 = {
 	internal: {
