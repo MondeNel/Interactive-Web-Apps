@@ -5,6 +5,8 @@
 /**
  * we used querySelector for searching and returning the very first element within the document that matches the given selector.
  * It acts as a tool that allows you to find and interact with specific elements in an HTML document.
+ * querySelector allows us to easily target elements, the same way we would by using CSS.
+ *  when we are targeting the class in CSS, we make use of the dot.notation
  */
 
 const root1 = document.querySelector('[data-key="order1"]'); 
@@ -44,21 +46,58 @@ pancakes1.textContent = root1.getAttribute("data-pancakes");
  * The retrieved value is then compared to the string "true" using the strict equality operator ===. Which checks for the same type and value.
  */
 
-if(status1.textContent = root1.getAttribute("data-delivered") === "true" ? "Delivered" : "Pending");
+// Order 1
+
+// Get the value of the "data-delivered" attribute from the "root1" element
+const deliveredAttribute1 = root1.getAttribute("data-delivered"); //  data-delivered= "false"
+
+/**
+ * This code checks the value of the "data-delivered" attribute and updates the text content of the "status1" element based on that value.
+ *  If the attribute is "true", it sets the text content to "Delivered", 
+ *  and if it's anything else, it sets the text content to "Pending".
+ */
+if (deliveredAttribute1 === "true") {
+  console.log(status1.textContent = "Delivered");
+} else {
+  console.log(status1.textContent = "Pending");
+}
 
 
 
 
-biscuits2.textContent = root2.getAttribute("data-biscuits");
-donuts2.textContent = root2.getAttribute("data-donuts");
-pancakes2.textContent = root2.getAttribute("data-pancakes");
-
-if(status2.textContent = root2.getAttribute("data-delivered") === "true" ? "Delivered" : "Pending");
 
 
+// Order 2
+
+biscuits2.textContent = root2.getAttribute("data-biscuits"); //  data-biscuits = "5" the attribute value is 5
+donuts2.textContent = root2.getAttribute("data-donuts"); // data-donuts = "0" ...
+pancakes2.textContent = root2.getAttribute("data-pancakes"); // data-pancakes = "2" ...
+
+
+const deliveredAttribute2 = root2.getAttribute("data-delivered"); // data-delivered = "false"
+
+if (deliveredAttribute2 === "true") {
+  console.log(status2.textContent = "Delivered");
+} else {
+  console.log(status2.textContent = "Pending");
+}
+
+
+
+
+
+
+
+// Order 3
 
 biscuits3.textContent = root3.getAttribute("data-biscuits");
 donuts3.textContent = root3.getAttribute("data-donuts");
 pancakes3.textContent = root3.getAttribute("data-pancakes");
 
-if(status3.textContent = root3.getAttribute("data-delivered") === "true" ? "Delivered" : "Pending");
+const deliveredAttribute3 = root3.getAttribute("data-delivered"); //   data-delivered = "true"
+
+if (deliveredAttribute3 === "true") {
+  console.log(status3.textContent = "Delivered");
+} else {
+  console.log(status3.textContent = "Pending");
+}
