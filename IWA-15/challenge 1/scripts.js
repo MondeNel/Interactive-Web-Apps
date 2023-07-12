@@ -9,9 +9,16 @@ const data = {
 }
 
 // Only edit below
-console.log(data.lists[0]);
-console.log(data.lists[1]);
-console.log(data.lists[2]);
+
+
+
+
+// we target the key(item) first and than the value of the item
+// and targeting the biggest number in the arrays above
+
+console.log(data.lists[0][1][0]);  
+console.log(data.lists[1][1][4]); 
+console.log(data.lists[2][1][0]); 
 
 
 const { first = 1 } = data.first || {} 
