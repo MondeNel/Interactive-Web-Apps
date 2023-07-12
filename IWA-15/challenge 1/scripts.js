@@ -10,34 +10,35 @@ const data = {
 
 // Only edit below
 
-
-
-
-// we target the key(item) first and than the value of the item #Destructuring
-// and targeting the biggest number in the arrays above
-
+/**
+ * This approach directly accesses the target values by chaining the index operators ([]) on the data.lists array.
+ * Each index corresponds to the desired level of nesting, enabling us to retrieve the values.
+ */
+// old way
 console.log(data.lists[0][1][0]);  
 console.log(data.lists[1][1][0]); 
 console.log(data.lists[2][1][0]); 
 
 
+/**
+ * we first declared a new variable and assign it the array.
+ * we utilize destructuring assignment to directly extract the nested arrays from data.lists.
+ * The empty commas (,) are used to skip the first element (string) in each inner array.
+ * Then, we access the first element of each nested array using indexing ([0]) to obtain the target values.
+ */
+// new way
+const [[, firstArray], [, secondArray], [, thirdArray]] = data.lists;
 
-//data.lists [0][1][0] gives us the first element value in the first array
-// I assume we need to target the first element of each array hence {first = 1}
-const { first = 1 } = data.lists[0][1][0] || {}
-
-
-//data.lists [1][1][0] gives us the first element value in the second array
-// I assume we need to target the first element of each array hence {second = 1}
-const { second = 1 } = data.lists[1][1][0] || {}
-
-
-//data.lists [2][1][0] gives us the first element value in the third array
-// I assume we need to target the first element of each array hence {third = 1}
-const { third = 1 } = data.lists[2][1][0] || {}
+console.log(firstArray[0]);
+console.log(secondArray[0]);
+console.log(thirdArray[0]);
 
 
-const result = [first, second, third];
+const { first = 1 } = data.first || {}
+const { second = 1 } = data.second || {}
+const { third = 1 } = data.third || {}
+
+const result = []
 
 
 const extractBiggest = () => {
