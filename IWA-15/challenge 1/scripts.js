@@ -9,12 +9,19 @@ const data = {
 }
 
 // Only edit below
+console.log(data.lists[0]);
+console.log(data.lists[1]);
+console.log(data.lists[2]);
 
-const { first = 1 } = data.first || {}
+
+const { first = 1 } = data.first || {} 
+
 const { second = 1 } = data.second || {}
+
 const { third = 1 } = data.third || {}
 
-const result = []
+
+const result = [first, second, third];
 
 const extractBiggest = () => {
 	if (first[-1] > second[-1]) {
