@@ -13,22 +13,32 @@ const data = {
 
 
 
-// we target the key(item) first and than the value of the item
+// we target the key(item) first and than the value of the item #Destructuring
 // and targeting the biggest number in the arrays above
 
 console.log(data.lists[0][1][0]);  
-console.log(data.lists[1][1][4]); 
+console.log(data.lists[1][1][0]); 
 console.log(data.lists[2][1][0]); 
 
 
-const { first = 1 } = data.first || {} 
 
-const { second = 1 } = data.second || {}
+//data.lists [0][1][0] gives us the first element value in the first array
+// I assume we need to target the first element of each array hence {first = 1}
+const { first = 1 } = data.lists[0][1][0] || {}
 
-const { third = 1 } = data.third || {}
+
+//data.lists [1][1][0] gives us the first element value in the second array
+// I assume we need to target the first element of each array hence {second = 1}
+const { second = 1 } = data.lists[1][1][0] || {}
+
+
+//data.lists [2][1][0] gives us the first element value in the third array
+// I assume we need to target the first element of each array hence {third = 1}
+const { third = 1 } = data.lists[2][1][0] || {}
 
 
 const result = [first, second, third];
+
 
 const extractBiggest = () => {
 	if (first[-1] > second[-1]) {
