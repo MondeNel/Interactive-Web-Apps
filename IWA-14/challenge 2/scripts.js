@@ -7,13 +7,17 @@
 */
 
 const add = (a, b) => {
+
 	return a + b;
-  };
- 
+
+ };
+
   
-  const multiply = (a, b) => {
-	return a * b;
-  };
+const multiply = (a, b) => {
+
+return a * b;
+
+};
 
 
 
@@ -33,15 +37,16 @@ const add = (a, b) => {
 
 function internal() {
 
-	const added = this.add(this.internal.a, this.internal.b);
 
-	const multiplied = this.multiply(this.internal.a, this.internal.b);
-
+	const added = add(this.internal.a, this.internal.b);
+	const multiplied = multiply(this.internal.a, this.internal.b);
+  
 	console.log(added);
 	console.log(multiplied);
 
 	return this;
-  }
+	
+}
 
 
 // // Not allowed to change below this
