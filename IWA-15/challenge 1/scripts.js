@@ -36,18 +36,18 @@ const data = {
 // This array refers to the "string" array. The comma(,) are used to skip the first array.
 const [[One ,], [Two ,], [Three ,]] = data.lists;
 
-console.log(One);
-console.log(Two);
-console.log(Three);
+// console.log(One);
+// console.log(Two);
+// console.log(Three);
 
 
 
 // This array refers to the Numbers array. The comma(,) are used to skip the second array.
 const [[, ArrayNum1], [, ArrayNum2], [, ArrayNum3]] = data.lists;
 
-console.log(ArrayNum1[0]);
-console.log(ArrayNum2[0]);
-console.log(ArrayNum3[0]);
+// console.log(ArrayNum1[0]);
+// console.log(ArrayNum2[0]);
+// console.log(ArrayNum3[0]);
 
 
 /**
@@ -60,26 +60,35 @@ console.log(ArrayNum3[0]);
 
 const [[, first], [, second], [, third]] = data.lists;
 
-console.log(first);
-console.log(second);
-console.log(third);
+// console.log(first);
+// console.log(second);
+// console.log(third);
 
 const result = [first[0], second[0], third[0]];
 
-const extractBiggest = () => {
-
 	// we are accessing the last element of an array by using [.length - 1]
 
-	if (first[first.length - 1] >= second[second.length - 1]) {
-	  return first;
-	}
-  
-	if (third[third.length - 1] === 1) {
-	  return second;
-	}
-  
-	return third;
-  };
+	const extractBiggest = () => {
+
+		if (first[first.length - 1] >= second[second.length - 1]) {
+		  return first.pop(); // when we pop, we remove the last element in the array
+		  
+		}
+		
+		if (third[third.length - 1] === 1) {
+		  return second.pop();
+		}
+		
+		return third.pop();
+	  };
+	  
+	  // The for loop is used to call the extractBiggest function 15 times and push the returned,
+	  // values into the result array.
+	  for (let i = 0; i < 15; i++) {
+		result.push(extractBiggest());
+	  }
+	  
+	//   console.log(result);
   
 
 
