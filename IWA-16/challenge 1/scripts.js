@@ -67,45 +67,65 @@ const MONTHS = [
   
   // Only edit below this comment
   
+  // Function to create HTML and display athlete information
+  // Inside the function, we extract the firstName, id, and races properties from the athlete object using destructuring assignment.
   const createHtml = (athlete) => {
-    firstName, surname, id, races = athlete
-    [date], [time] = races.reverse()
+    const { firstName, id, races } = athlete;
+
+    
+  // Get the latest race details
+  //  We retrieve the last race in the races array by using races[races.length - 1]
+  // To display the athlete information, we convert the date string to a JavaScript Date object using new Date(latestRace.date)
+  //  Then, we extract the month, day, and year from the Date object
+  const latestRace = races[races.length - 1];
+  const raceDate = new Date(latestRace.date);
+  const raceTime = latestRace.time.join();
+
+  // Display athlete information
+  console.log(`First Name:   ${firstName}`);
+  console.log(`ID: ${id}`);
+  console.log(`Latest Race Date:  ${MONTHS[raceDate.getMonth()]} ${raceDate.getDate()} ${raceDate.getFullYear()}`);
+  console.log(`Latest Race Time: ${raceTime}`);
   
-    const fragment = document.createDocumentFragment();
+  };
+  createHtml(data.response.data.NM372);
+   
   
-    title = document.createElement(h2);
-    title= id;
-    fragment.appendChild(title);
+    // const fragment = document.createDocumentFragment();
   
-    const list = document.createElement(dl);
+    // title = document.createElement(h2);
+    // title= id;
+    // fragment.appendChild(title);
   
-    const day = date.getDate();
-    const month = MONTHS[date.month];
-    const year = date.year;
+    // const list = document.createElement(dl);
   
-    first, second, third, fourth = timeAsArray;
-    total = first + second + third + fourth;
+    // const day = date.getDate();
+    // const month = MONTHS[date.month];
+    // const year = date.year;
   
-    const hours = total / 60;
-    const minutes = total / hours / 60;
+    // first, second, third, fourth = timeAsArray;
+    // total = first + second + third + fourth;
   
-    list.innerHTML = /* html */ `
-      <dt>Athlete</dt>
-      <dd>${firstName surname}</dd>
+    // const hours = total / 60;
+    // const minutes = total / hours / 60;
   
-      <dt>Total Races</dt>
-      <dd>${races}</dd>
+    // list.innerHTML = /* html */ `
+    //   <dt>Athlete</dt>
+    //   <dd>${firstName surname}</dd>
   
-      <dt>Event Date (Latest)</dt>
-      <dd>${day month year}</dd>
+    //   <dt>Total Races</dt>
+    //   <dd>${races}</dd>
   
-      <dt>Total Time (Latest)</dt>
-      <dd>${hours.padStart(2, 0) minutes}</dd>
-    `;
+    //   <dt>Event Date (Latest)</dt>
+    //   <dd>${day month year}</dd>
   
-    fragment.appendChild(list);
-  }
+    //   <dt>Total Time (Latest)</dt>
+    //   <dd>${hours.padStart(2, 0) minutes}</dd>
+    // `;
   
-  [NM372], [SV782] = data
-  document.querySelector(NM372).appendChild(createHtml(NM372));
-  document.querySelector(SV782).appendChild(createHtml(SV782));
+  //   fragment.appendChild(list);
+  // }
+  
+  // [NM372], [SV782] = data
+  // document.querySelector(NM372).appendChild(createHtml(NM372));
+  // document.querySelector(SV782).appendChild(createHtml(SV782));
