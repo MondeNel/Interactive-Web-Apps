@@ -67,89 +67,94 @@ const data = {
 
 // Only edit below this comment
 
-// Function to create HTML and display athlete information
-// we extract the firstName, id, and races properties from the athlete object using destructuring assignment { }.
+/**
+ * The createHtml function is responsible for creating HTML elements and displaying athlete information.
+ * It takes an athlete object as a parameter, which contains the athlete's details.
+ * Inside the createHtml function, we extract the necessary properties from the athlete object using object destructuring.
+ */
 const createHtml = (athlete) => {
-  const { firstName, id, races } = athlete;
+  const { firstName, surname, id, races } = athlete;
 
-  // Get the latest race details
-  // We retrieve the last race in the races array by using races[races.length - 1]
-  // To display the athlete information, we convert the date string to a JavaScript Date object using new Date(latestRace.date)
-  // Then, we extract the month, day, and year from the Date object
+  /**
+   * However, to display the total number of races correctly, we need to use to make use of a variable.
+   * we retrieve the last race in the races array by using races[races.length - 1]
+   * To display the athlete information, we convert the date string to a JavaScript Date object using new Date(latestRace.date)
+   * Then, we extract the month, day, and year from the Date object.
+   */
   const totalRaces = races.length;
 
   const latestRace = races[races.length - 1];
   const raceDate = new Date(latestRace.date);
   const raceTime = latestRace.time.join(":");
 
-  console.log(`First Name: ${firstName}`);
+  console.log(`Athlete: ${firstName} ${surname}`);
   console.log(`ID: ${id}`);
+  console.log(`Total Races: ${totalRaces}`);
+  console.log(`Total Time (Latest): ${raceTime}`);
+
+  // console.log(createHtml(data.response.data.NM372)); // Display Nwabisa's information
+  // console.log(createHtml(data.response.data.SV782)); // Display Schalk's information
+
+  // Created a DocumentFragment to hold the elements
+  const fragment = document.createDocumentFragment();
+
+  // Created a list element
+  const list = document.createElement("dl");
+
+  // Got the current date
+  const date = new Date();
+  const day = date.getDate();
+  const month = MONTHS[date.getMonth()];
+  const year = date.getFullYear();
+
+  // Destructuring the Array
+  const timeAsArray = [10, 20, 30, 40];
+  const [first, second, third, fourth] = timeAsArray;
+
+  const total = first + second + third + fourth;
+  console.log(`total time array = ${total}`);
+
+  // we get the current hours of the new date we created which is the current date
+  const hours = Math.floor(total / 60);
+
+  // we get the current minutes of the new date we created which is the current date
+  const minutes = total % 60;
+
+  // Display current date and time
+  console.log(`Current Date: ${day} ${month} ${year}`);
   console.log(
-    `Latest Race Date: ${
-      MONTHS[raceDate.getMonth()]
-    } ${raceDate.getDate()} ${raceDate.getFullYear()}`
+    `Current Time: ${date.getHours()} hours ${date.getMinutes()} minutes`
   );
-  console.log(`Latest Race Time: ${raceTime}`);
+
+  list.innerHTML = /* html */ `
+    <dt>Athlete</dt>
+    <dd>${firstName} ${surname}</dd>
+    <dt>Total Races</dt>
+    <dd>${totalRaces}</dd>
+    <dt>Event Date (Latest)</dt>
+    <dd>${raceDate.getDate()} ${
+    MONTHS[raceDate.getMonth()]
+  } ${raceDate.getFullYear()}</dd>
+    <dt>Total Time (Latest)</dt>
+    <dd>${raceTime}</dd>
+    
+  `;
+  fragment.appendChild(list);
+
+  return fragment;
 };
 
-createHtml(data.response.data.NM372); // Display Nwabisa's information
-createHtml(data.response.data.SV782); // Display Schalk's information
-
-// Created a DocumentFragment to hold the elements
-const fragment = document.createDocumentFragment();
-
-// Created a list element
-const list = document.createElement("dl");
-
-// Got the current date
-const date = new Date();
-const day = date.getDate();
-const month = MONTHS[date.getMonth()];
-const year = date.getFullYear();
-
-// Destructuring the Array
-const timeAsArray = [10, 20, 30, 40];
-const [first, second, third, fourth] = timeAsArray;
-
-const total = first + second + third + fourth;
-console.log(`total time array = ${total}`);
-
-// we get the current hours of the new date we created which is the current date
-const hours = Math.floor(total / 60);
-console.log(`${date.getHours()} hours`);
-
-// we get the current minutes of the new date we created which is the current date
-const minutes = total % 60;
-console.log(`${date.getMinutes()} minutes`);
-
-// Display current date and time
-console.log(`Current Date: ${day} ${month} ${year}`);
-console.log(
-  `Current Time: ${date.getHours()} hours ${date.getMinutes()} minutes`
-);
-
-// Display total time
-console.log(
-  `Total Time: ${hours.toString().padStart(2, "0")}:${minutes
-    .toString()
-    .padStart(2, "0")}`
-);
-
-// Append the list element to the fragment
-fragment.appendChild(list);
-
-// Append the fragment to the document body
-document.body.appendChild(fragment);
-
-const NM372 = data;
-const SV782 = data;
+const NWABISA = data.response.data.NM372;
+const SCHALK = data.response.data.SV782;
 
 // we made use of the spread(...) operator to get all the information on each array key
 const { ...nwabisaData } = data.response.data.NM372;
 const { ...schalkData } = data.response.data.SV782;
 
-console.log(nwabisaData);
-console.log(schalkData);
+// here we target the html element from the DOM directly with JS.
+const nwabisaSection = document.querySelector('[data-athlete="NM372"]');
+const schalkSection = document.querySelector('[data-athlete="SV782"]');
 
-document.querySelector('[data-athlete="NM372"]').appendChild(createHtml(NM372));
-document.querySelector('[data-athlete="SV782"]').appendChild(createHtml(SV782));
+// we
+nwabisaSection.appendChild(createHtml(NWABISA));
+schalkSection.appendChild(createHtml(SCHALK));
