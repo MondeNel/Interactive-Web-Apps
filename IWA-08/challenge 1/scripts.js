@@ -24,13 +24,13 @@ const leo = {
     postalCode: leoPostal,
   },
 };
-console.log(leo.name)
-console.log(leo.balance)
-console.log(leo.access_id)
-console.log(leo.age)
-console.log(leo.address.number)
-console.log(leo.address.street)
-console.log(leo.address.postalCode)
+// console.log(leo.name)
+// console.log(leo.balance)
+// console.log(leo.access_id)
+// console.log(leo.age)
+// console.log(leo.address.number)
+// console.log(leo.address.street)
+// console.log(leo.address.postalCode)
 
 
 
@@ -45,13 +45,13 @@ const sarah = {
     postalCode: sarahPostal,
   },
 };
-console.log(sarah.name)
-console.log(sarah.age)
-console.log(sarah.access_id)
-console.log(sarah.balance)
-console.log(sarah.address.number)
-console.log(sarah.address.street)
-console.log(sarah.address.postal_code)
+// console.log(sarah.name)
+// console.log(sarah.age)
+// console.log(sarah.access_id)
+// console.log(sarah.balance)
+// console.log(sarah.address.number)
+// console.log(sarah.address.street)
+// console.log(sarah.address.postal_code)
 
 console.log(leo); 
 console.log(leo.address.postalCode);
