@@ -76,23 +76,23 @@ status1.style.color; // color = 'red'
 // we than check if overdue for book1 should be enabled or disabled based on the "overdue" status.
 
 if (STATUS_MAP.overdue.canReserve) {         // the property in 'overdue' of canReserve: false,
-    reserve1 = 'enabled';
+     document.querySelector("#book1 .reserve").enabled = false;
     } else {
-    reserve1 = 'disabled';
+     document.querySelector("#book1 .reserve").disabled = true;
     }
 
 
 if (STATUS_MAP.overdue.canCheckout) {      // the property in 'overdue' of canCheckout: false,
-    checkOut1 = 'enabled';
+     document.querySelector("#book1 .checkout").enabled = false;
 } else {
-    checkOut1= 'disabled';
+     document.querySelector("#book1 .checkout").enabled = true;
 }
 
 
 if (STATUS_MAP.overdue.canCheckIn) {      // the property in 'overdue' of canCheckIn: true,
-    checkIn1 = 'enabled';
+     document.querySelector("#book1 .checkin").enabled = true;
 } else {
-    checkIn1 = 'disabled';
+     document.querySelector("#book1 .checkin").disabled = false;
 }
 
 
@@ -118,22 +118,23 @@ status2.style.color; // color = 'blue'
 // If it is true, we assign the string 'enabled' to the property variable; otherwise, we assign 'disabled'.
 // Check if reservation for book2 should be enabled or disabled based on the "overdue" status
 
-if (STATUS_MAP.reserved.canReserve) {         // the property in 'reserved' of canReserve: false,
-    reserve2 = 'enabled';
-} else {
-    reserve2 = 'disabled';
-}
+if (STATUS_MAP.reserved.canReserve) {        // the property in 'reserved' canReserve: false,
+        document.querySelector("#book2 .reserve").enabled = false;
+    } else {
+        document.querySelector("#book2 .reserve").disabled = true;
+    }
+
 
 if (STATUS_MAP.reserved.canCheckout) {      // the property in 'reserved' canCheckout: true,
-checkOut2 = 'enabled';
-} else {
-    checkOut2 = 'disabled';
+        document.querySelector("#book2 .checkout").enabled = true;
+    } else {
+        document.querySelector("#book2 .checkout").disabled = false;
 }
 
 if (STATUS_MAP.reserved.canCheckIn) {      // the property in 'overdue' of canCheckIn: false,
-    checkIn2 = 'enabled';
-} else {
-    checkIn2 = 'disabled';
+        document.querySelector("#book2 .checkin").enabled = false;
+    } else {
+        document.querySelector("#book2 .checkin").disabled = true;
 }
 
 
@@ -162,20 +163,20 @@ status3.style.color; // color = 'green'
 // Check if shelf for book3 should be enabled or disabled based on the "overdue" status
 
 if (STATUS_MAP.shelf.canReserve) {         // the property in 'shelf' of canReserve: true,
-    reserve3 = 'enabled';
-} else {
-    reserve3 = 'disabled';
-}
+        document.querySelector("#book3 .reserve").enabled = true;
+    } else {
+        document.querySelector("#book3 .reserve").disabled = false;
+    }
 
 if (STATUS_MAP.shelf.canCheckout) {       // the property in 'shelf' canCheckout: true,
-    checkOut3 = 'enabled';
-} else {
-   checkOut3 = 'disabled';
-}
+        document.querySelector("#book3 .checkout").enabled = true;
+    } else {
+    document.querySelector("#book3 .checkout").disabled = false;
+    }
 
 if (STATUS_MAP.shelf.canCheckIn) {        // the property in 'shelf' of canCheckIn: false,
-    checkIn3 = 'enabled';
-} else {
-    checkIn3 = 'disabled';
-}
+        document.querySelector("#book3 .checkin").enabled = false;
+    } else {
+        document.querySelector("#book3 .checkin").disabled = true;
+    }
     
