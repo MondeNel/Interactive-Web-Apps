@@ -17,12 +17,12 @@ function internal() {
 	const multiplied = added * this.internal.c; 
 
 	// exmaple1 
-	// const add = this.internal.(2) + this.internal.(4) = 6
-	// const multiply = add(6) * this.internal.(8) = 48
+	// const added = this.internal.(2) + this.internal.(4) = 6
+	// const multiplied = added(6) * this.internal.(8) = 48
 
 	//example2
-	// const add = this.internal.(2) + this.internal.(2) = 4
-	// const multiply = add(4) * this.internal.(3) = 12
+	// const added = this.internal.(2) + this.internal.(2) = 4
+	// const multiplied = added(4) * this.internal.(3) = 12
   
 	console.log(added);
 	console.log(multiplied);
