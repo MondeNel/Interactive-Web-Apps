@@ -15,82 +15,60 @@ const data = {
  * Each index corresponds to the desired level of nesting, enabling us to retrieve the values.
  */
 
-
-// old way
-// console.log(data.lists[0][1][0]);  
-// console.log(data.lists[1][1][0]); 
-// console.log(data.lists[2][1][0]); 
-
-
-/**
- * we first declared a new variable and assign it the array.
- * we utilize destructuring assignment to directly extract the nested arrays from data.lists.
- * The empty commas (,) are used to skip the first element (string) in each inner array.
- * Then, we access the first element of each nested array using indexing ([0]) to obtain the target values.
- */
+// OLD WAY
+// the first [0] index = the nested array itself. ['first', [15, 11, 13, 7, 5]
+// the second [1] index = the second array of numbers. [15, 11, 13, 7, 5]
+// the third [0] index = the index[0] of the second array will give us first number of the array which is 15 
+console.log(data.lists[0][1][0]); 
 
 
 // new way
-
-
-// This array refers to the "string" array. The comma(,) are used to skip the first array.
+// This array refers to the "string" array. The comma(,) are used to skip the following array.
+// we utilize destructuring assignment to directly extract the nested arrays from data.list
 const [[One ,], [Two ,], [Three ,]] = data.lists;
 
-// console.log(One);
-// console.log(Two);
-// console.log(Three);
+console.log(One); // this result in the first array, that is a string called 'first'
 
 
-
-// This array refers to the Numbers array. The comma(,) are used to skip the second array.
-const [[, ArrayNum1], [, ArrayNum2], [, ArrayNum3]] = data.lists;
-
-// console.log(ArrayNum1[0]);
-// console.log(ArrayNum2[0]);
-// console.log(ArrayNum3[0]);
-
-
-/**
-* The destructuring assignment is used to extract the nested arrays within data.lists and assign their values to first, second, and third.
-* The first element of each nested array is ignored (represented by an empty slot ,) as it is not needed.
-* The values of first, second, and third are logged to the console.
-* The result array is created with the first element of each nested array (first[0], second[0], third[0]).
-* we targeted the array that consists of numbers, because we can't perform experssions with strings. 
-*/
-
+// This array refers to the Numbers array. The comma(,) are used to skip the first array.
 const [[, first], [, second], [, third]] = data.lists;
 
-// console.log(first);
-// console.log(second);
-// console.log(third);
+console.log(first[0]); // the bracket[] targets the index of each element within the array.
+console.log(first.at(0)); // the at() method allows us to target a specific index within the array.
 
+
+ // we created a result variable, to target the first index of each element in the array, which we will call later on
 const result = [first[0], second[0], third[0]];
 
-	// we are accessing the last element of an array by using [.length - 1]
+const extractBiggest = () => {
 
-	const extractBiggest = () => {
+// The purpose of using comparison operators in this function is to make a decision
+// based on the relationship between the last elements
 
-		if (first[first.length - 1] >= second[second.length - 1]) {
-		  return first.pop(); // when we pop, we remove the last element in the array
-		  
-		}
-		
-		if (third[third.length - 1] === 1) {
-		  return second.pop();
-		}
-		
+
+// first.length - 1 (5) >= second.length - 1 (10)
+	if (first[first.length - 1] >= second[second.length - 1] ) {
+		return first.pop(); 
+
+// In this case, first.pop() is called, which removes the last element from the first array and returns it as the result.
+// by using the pop() method in this context allows us to retrieve, compare, and remove the last elements of the arrays,
+// providing a way to determine the array with the largest last element.
+
+	}
+// second.length - 1 (10) >= third.length - 1 (1)
+	if (second[second.length - 1] >= third[third.length - 1]){
+		return second.pop();
+	}
+	
+// third.length - 1 (1) !== first.lenght - 1 (5) 
+// Using the not equal to operator allows us to handle cases where you want to remove the last element from 
+// third if it differs from the last element of first.
+	if (third[third.length - 1] !== first[first.length - 1]) {
 		return third.pop();
-	  };
-	  
-	  // The for loop is used to call the extractBiggest function 15 times and push the returned,
-	  // values into the result array.
-	  for (let i = 0; i < 15; i++) {
-		result.push(extractBiggest());
-	  }
-	  
-	//   console.log(result);
-  
-
+	}
+	
+};
+	
 
 // Only edit above
 
