@@ -69,30 +69,30 @@ checkin.style.color = "black";
 // This sets the color of status1 to the color value specified in the STATUS_MAP object for the "overdue" status.
 
 status1.style.color = STATUS_MAP.overdue.color
-console.log(status1.style.color); // color = 'red'
+status1.style.color; // color = 'red'
 
 // We than use an if statement to check if the  property of the "overdue" status in the STATUS_MAP object is true.
 // If it is true, we assign the string 'enabled' to the property variable; otherwise, we assign 'disabled'.
 // we than check if overdue for book1 should be enabled or disabled based on the "overdue" status.
 
 if (STATUS_MAP.overdue.canReserve) {         // the property in 'overdue' of canReserve: false,
-    console.log(reserve1 = 'enabled');
+    reserve1 = 'enabled';
     } else {
-    console.log(reserve1 = 'disabled');
+    reserve1 = 'disabled';
     }
 
 
 if (STATUS_MAP.overdue.canCheckout) {      // the property in 'overdue' of canCheckout: false,
-    console.log(checkOut1 = 'enabled');
+    checkOut1 = 'enabled';
 } else {
-    console.log(checkOut1= 'disabled');
+    checkOut1= 'disabled';
 }
 
 
 if (STATUS_MAP.overdue.canCheckIn) {      // the property in 'overdue' of canCheckIn: true,
-    console.log(checkIn1 = 'enabled');
+    checkIn1 = 'enabled';
 } else {
-    console.log(checkIn1 = 'disabled');
+    checkIn1 = 'disabled';
 }
 
 
@@ -111,7 +111,7 @@ checkin.style.color = "black";
 // This sets the color of status2 to the color value specified in the STATUS_MAP object for the "reserved" status.
 
 status2.style.color = STATUS_MAP.reserved.color
-console.log(status2.style.color); // color = 'blue'
+status2.style.color; // color = 'blue'
 
 
 // We than use an if statement to check if the  property of the "reserved" status in the STATUS_MAP object is true.
@@ -119,21 +119,21 @@ console.log(status2.style.color); // color = 'blue'
 // Check if reservation for book2 should be enabled or disabled based on the "overdue" status
 
 if (STATUS_MAP.reserved.canReserve) {         // the property in 'reserved' of canReserve: false,
-console.log(reserve2 = 'enabled');
+    reserve2 = 'enabled';
 } else {
-console.log(reserve2 = 'disabled');
+    reserve2 = 'disabled';
 }
 
 if (STATUS_MAP.reserved.canCheckout) {      // the property in 'reserved' canCheckout: true,
-    console.log(checkOut2 = 'enabled');
+checkOut2 = 'enabled';
 } else {
-    console.log(checkOut2 = 'disabled');
+    checkOut2 = 'disabled';
 }
 
 if (STATUS_MAP.reserved.canCheckIn) {      // the property in 'overdue' of canCheckIn: false,
-    console.log(checkIn2 = 'enabled');
+    checkIn2 = 'enabled';
 } else {
-    console.log(checkIn2 = 'disabled');
+    checkIn2 = 'disabled';
 }
 
 
@@ -154,7 +154,7 @@ checkin.style.color = "black";
 // This sets the color of status3 to the color value specified in the STATUS_MAP object for the "shelf" status.
 
 status3.style.color = STATUS_MAP.shelf.color
-console.log(status3.style.color); // color = 'green'
+status3.style.color; // color = 'green'
 
 
 // We than use an if statement to check if the  property of the "shelf" status in the STATUS_MAP object is true.
@@ -162,20 +162,20 @@ console.log(status3.style.color); // color = 'green'
 // Check if shelf for book3 should be enabled or disabled based on the "overdue" status
 
 if (STATUS_MAP.shelf.canReserve) {         // the property in 'shelf' of canReserve: true,
-console.log(reserve3 = 'enabled');
+    reserve3 = 'enabled';
 } else {
-console.log(reserve3 = 'disabled');
+    reserve3 = 'disabled';
 }
 
 if (STATUS_MAP.shelf.canCheckout) {       // the property in 'shelf' canCheckout: true,
-    console.log(checkOut3 = 'enabled');
+    checkOut3 = 'enabled';
 } else {
-    console.log(checkOut3 = 'disabled');
+   checkOut3 = 'disabled';
 }
 
 if (STATUS_MAP.shelf.canCheckIn) {        // the property in 'shelf' of canCheckIn: false,
-    console.log(checkIn3 = 'enabled');
+    checkIn3 = 'enabled';
 } else {
-    console.log(checkIn3 = 'disabled');
+    checkIn3 = 'disabled';
 }
     

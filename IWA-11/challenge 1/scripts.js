@@ -57,9 +57,9 @@ const deliveredAttribute1 = root1.getAttribute("data-delivered"); //  data-deliv
  *  and if it's anything else, it sets the text content to "Pending".
  */
 if (deliveredAttribute1 === "true") {
-  console.log(status1.textContent = "Delivered");
+  status1.textContent = "Delivered";
 } else {
-  console.log(status1.textContent = "Pending");
+  status1.textContent = "Pending";
 }
 
 
@@ -77,9 +77,9 @@ pancakes2.textContent = root2.getAttribute("data-pancakes"); // data-pancakes = 
 const deliveredAttribute2 = root2.getAttribute("data-delivered"); // data-delivered = "false"
 
 if (deliveredAttribute2 === "true") {
-  console.log(status2.textContent = "Delivered");
+ status2.textContent = "Delivered";
 } else {
-  console.log(status2.textContent = "Pending");
+  status2.textContent = "Pending";
 }
 
 
@@ -97,7 +97,7 @@ pancakes3.textContent = root3.getAttribute("data-pancakes");
 const deliveredAttribute3 = root3.getAttribute("data-delivered"); //   data-delivered = "true"
 
 if (deliveredAttribute3 === "true") {
-  console.log(status3.textContent = "Delivered");
+  status3.textContent = "Delivered";
 } else {
-  console.log(status3.textContent = "Pending");
+  status3.textContent = "Pending";
 }
