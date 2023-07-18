@@ -10,37 +10,25 @@ let calculated = '1'
  * It should be typeof calculated === 'string' to check if calculated is a string.
  */
 
+// The comparison operator in the logCalc function has been changed to === to assign the value of 'numerical-string' to the isString variable.
+const logCalc = () => { 
+    const isString = typeof calculated === 'string';
+    const calculatedAsNumber = isString ? parseInt(calculated) : Number(calculated);
+    calculated = calculatedAsNumber + 1;
+};
 
-const logCalc = (calculated) => { 
-    
-// we performed a tenary expression to check if calculated is a numerical string
-const isString = calculated === "string" ?  'numerical-string' : 'not a muerical-string' ; 
-
-// we re-assigned it to a number(Integer), to perform some calculation.
-const calculatedAsNumber = parseInt(calculated);
-
-console.log(calculated === calculatedAsNumber + 1); 
-}
-
-
-
-const calcUser =  () => { // the function was not defined/assigned properly (const = calcUser () => {}) 
-
-  // calculated is a string variable of "1", we changed it into an integer to perform expressions
-  if (parseInt(calculated) <= 2) user = 'John';    
-  if (parseInt(calculated) >= 2) state = 'requesting';
-  if (parseInt(calculated) <= 3) state = 'idle';
-}
-
+const calcUser = () => {
+  logCalc();
+  if (calculated > 2) user = 'John';
+  if (calculated > 2) state = 'requesting';
+  if (calculated > 3) state = 'idle';
+};
 
 const checkUser = () => {
-
-	if (user && state !== 'requesting') {
-
+	if (user && state === 'requesting') {
 		console.log(`User: ${user} (${calculated})`);
-
 	}
-}
+};
 
 // // Only allowed to change code above
 
