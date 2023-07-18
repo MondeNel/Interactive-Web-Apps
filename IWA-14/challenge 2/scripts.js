@@ -13,8 +13,8 @@ const multiply = (a, b) => a * b;
 
 function internal() {
 
-	const add = this.internal.a + this.internal.b; 
-	const multiply = add * this.internal.c; 
+	const added = this.internal.a + this.internal.b; 
+	const multiplied = added * this.internal.c; 
 
 	// exmaple1 
 	// const add = this.internal.(2) + this.internal.(4) = 6
@@ -24,8 +24,8 @@ function internal() {
 	// const add = this.internal.(2) + this.internal.(2) = 4
 	// const multiply = add(4) * this.internal.(3) = 12
   
-	console.log(add);
-	console.log(multiply);
+	console.log(added);
+	console.log(multiplied);
 
 	return this;
 	
