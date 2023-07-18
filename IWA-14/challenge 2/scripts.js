@@ -6,47 +6,31 @@
 * especially for functions that don't have complex logic or require a separate this context.
 */
 
-const add = (a, b) => {
+const add = (a, b) =>  a + b; 
 
-	return a + b;
+const multiply = (a, b) => a * b; 
 
- };
-
-  
-const multiply = (a, b) => {
-
-return a * b;
-
-};
-
-
-
-/**
- * The 'this' keyword refers to the current object or the object that the function is a part of.
- * It allows you to access properties and methods within an object.
- */
-
-
-
-/**
- * The add function is called using this.add with the values of a and b retrieved from the internal object 
- * (this.internal.a and this.internal.b).
- * he internal function returns 'this'.
- * By using the this.internal, we are referencing to the object to access the values within the object.
- */
 
 function internal() {
 
+	const add = this.internal.a + this.internal.b; 
+	const multiply = add * this.internal.c; 
 
-	const added = add(this.internal.a, this.internal.b);
-	const multiplied = multiply(this.internal.a, this.internal.b);
+	// exmaple1 
+	// const add = this.internal.(2) + this.internal.(4) = 6
+	// const multiply = add(6) * this.internal.(8) = 48
+
+	//example2
+	// const add = this.internal.(2) + this.internal.(2) = 4
+	// const multiply = add(4) * this.internal.(3) = 12
   
-	console.log(added);
-	console.log(multiplied);
+	console.log(add);
+	console.log(multiply);
 
 	return this;
 	
 }
+
 
 
 // // Not allowed to change below this
