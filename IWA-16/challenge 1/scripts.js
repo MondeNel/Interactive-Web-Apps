@@ -105,17 +105,17 @@ const createHtml = (athlete) => {
   // we get the current minutes of the new date we created which is the current date
   const minutes = total % 60;
 
-
-  list.innerHTML = /* html */ `
+  /** html */
+  list.innerHTML = `
     <dt>Athlete</dt>
-    <dd>${firstName} ${surname}</dd>
+    <dd>${firstName} ${surname}</dd> 
     <dt>Total Races</dt>
     <dd>${races.length}</dd>
-     <dt>Event Date (Latest)</dt>
-    <dd>${day} ${month} ${year}</dd>
-  } ${raceDate.getFullYear()}</dd>
+    <dt>Event Date (Latest)</dt>
+    <dd>${day} ${month} ${year}</dd> 
+    <dd>${raceDate.getFullYear()}</dd>
     <dt>Total Time (Latest)</dt>
-      <dd>${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}</dd>
+    <dd>${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}</dd>
     
   `;
   fragment.appendChild(list);

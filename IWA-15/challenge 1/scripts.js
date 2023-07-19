@@ -36,20 +36,13 @@ const result = [first[0], second[0], third[0]];
 
 const extractBiggest = () => {
 
-// first.length - 1 (5) >= second.length - 1 (10)
-	if (first[first.length - 1] >= second[second.length - 1] ) {
-		return first.pop(); 
-	}
-// second.length - 1 (10) >= third.length - 1 (1)
-	if (second[second.length - 1] >= third[third.length - 1]){
+	if ( (first[first.length - 1] >= second[second.length - 1]) && (first[first.length - 1] >= third[third.length - 1] ) ) {
+		return first.pop();
+	}else if (second[second.length - 1] >= third[third.length - 1]){
 		return second.pop();
-	}
-	
-// third.length - 1 (1) != first.lenght - 1 (5) 
-	if (third[third.length - 1] != first[first.length - 1]) {
+	}else {
 		return third.pop();
 	}
-	
 };
 	
 
