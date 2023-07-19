@@ -134,6 +134,5 @@ const { ...schalkData } = data.response.data.SV782;
 const nwabisaSection = document.querySelector('[data-athlete="NM372"]');
 const schalkSection = document.querySelector('[data-athlete="SV782"]');
 
-// we
 nwabisaSection.appendChild(createHtml(NWABISA));
 schalkSection.appendChild(createHtml(SCHALK));
