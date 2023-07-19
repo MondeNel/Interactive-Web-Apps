@@ -6,8 +6,10 @@
 * especially for functions that don't have complex logic or require a separate this context.
 */
 
+// function add = a, b => { a + b }
 const add = (a, b) =>  a + b; 
 
+// function multiply = a, b => { a - b }
 const multiply = (a, b) => a * b; 
 
 
