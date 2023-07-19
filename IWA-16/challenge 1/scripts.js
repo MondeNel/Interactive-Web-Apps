@@ -67,30 +67,16 @@ const data = {
 
 // Only edit below this comment
 
-/**
- * The createHtml function is responsible for creating HTML elements and displaying athlete information.
- * It takes an athlete object as a parameter, which contains the athlete's details.
- * Inside the createHtml function, we extract the necessary properties from the athlete object using object destructuring.
- */
+
+// const createHtml = (athlete) => {
+//   firstName, surname, id, races = athlete
+//   [date], [time] = races.reverse()
+// }
+
 const createHtml = (athlete) => {
   const { firstName, surname, id, races } = athlete;
-
-  /**
-   * However, to display the total number of races correctly, we need to use to make use of a variable.
-   * we retrieve the last race in the races array by using races[races.length - 1]
-   * To display the athlete information, we convert the date string to a JavaScript Date object using new Date(latestRace.date)
-   * Then, we extract the month, day, and year from the Date object.
-   */
-  const totalRaces = races.length;
-
   const latestRace = races[races.length - 1];
-  const raceDate = new Date(latestRace.date);
-  const raceTime = latestRace.time.join(":");
-
-  console.log(`Athlete: ${firstName} ${surname}`);
-  console.log(`ID: ${id}`);
-  console.log(`Total Races: ${totalRaces}`);
-  console.log(`Total Time (Latest): ${raceTime}`);
+  const { date, time } = latestRace;
 
   // console.log(createHtml(data.response.data.NM372)); // Display Nwabisa's information
   // console.log(createHtml(data.response.data.SV782)); // Display Schalk's information
@@ -101,15 +87,14 @@ const createHtml = (athlete) => {
   // Created a list element
   const list = document.createElement("dl");
 
-  // Got the current date
-  const date = new Date();
-  const day = date.getDate();
-  const month = MONTHS[date.getMonth()];
-  const year = date.getFullYear();
+  const raceDate = new Date(date); // Create a Date object from the date string
+  const day = raceDate.getDate();
+  const month = MONTHS[raceDate.getMonth()]; // Use getMonth() to get the month index and access the corresponding month name from MONTHS array
+  const year = raceDate.getFullYear();
+
 
   // Destructuring the Array
-  const timeAsArray = [10, 20, 30, 40];
-  const [first, second, third, fourth] = timeAsArray;
+  const [first, second, third, fourth] = time; // Destructure the time array
 
   const total = first + second + third + fourth;
   console.log(`total time array = ${total}`);
@@ -120,23 +105,17 @@ const createHtml = (athlete) => {
   // we get the current minutes of the new date we created which is the current date
   const minutes = total % 60;
 
-  // Display current date and time
-  console.log(`Current Date: ${day} ${month} ${year}`);
-  console.log(
-    `Current Time: ${date.getHours()} hours ${date.getMinutes()} minutes`
-  );
 
   list.innerHTML = /* html */ `
     <dt>Athlete</dt>
     <dd>${firstName} ${surname}</dd>
     <dt>Total Races</dt>
-    <dd>${totalRaces}</dd>
-    <dt>Event Date (Latest)</dt>
-    <dd>${raceDate.getDate()} ${
-    MONTHS[raceDate.getMonth()]
+    <dd>${races.length}</dd>
+     <dt>Event Date (Latest)</dt>
+    <dd>${day} ${month} ${year}</dd>
   } ${raceDate.getFullYear()}</dd>
     <dt>Total Time (Latest)</dt>
-    <dd>${raceTime}</dd>
+      <dd>${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}</dd>
     
   `;
   fragment.appendChild(list);
