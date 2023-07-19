@@ -115,7 +115,7 @@ const createHtml = (athlete) => {
     <dd>${day} ${month} ${year}</dd> 
     <dd>${raceDate.getFullYear()}</dd>
     <dt>Total Time (Latest)</dt>
-    <dd>${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}</dd>
+    <dd>${hours.toString().padStart(2, 'git0')}:${minutes.toString().padStart(2, '0')}</dd>
     
   `;
   fragment.appendChild(list);
