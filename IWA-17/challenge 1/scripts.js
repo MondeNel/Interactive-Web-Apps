@@ -19,13 +19,6 @@ const getDaysInMonth = (date) => new Date(date.getFullYear(), date.getMonth() + 
 
 // Only edit below
 
-/**
- * Inside the for-loop condition, createArray.length was replaced with just length. 
- * We need to use the function parameter length to specify the desired size of the array to be created.
- * Inside the for-loop body, result.push() was updated to result.push(i). This way, we push the current value of i into the result array during each iteration,
- *  which will generate an array containing numbers from 0 to length - 1.
- */
-
 
 const createArray = (length) => {
     const result = [];
