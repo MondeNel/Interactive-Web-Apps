@@ -17,94 +17,103 @@ const MONTHS = [
 
 const getDaysInMonth = (date) => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()
 
-// Only edit below 
+// Only edit below
+
+/**
+ * Inside the for-loop condition, createArray.length was replaced with just length. 
+ * We need to use the function parameter length to specify the desired size of the array to be created.
+ * Inside the for-loop body, result.push() was updated to result.push(i). This way, we push the current value of i into the result array during each iteration,
+ *  which will generate an array containing numbers from 0 to length - 1.
+ */
+
 
 const createArray = (length) => {
-    const result = []
+    const result = [];
 
-    for (let  =; i < length; i) {
-        result.push()
+    for (let i = 0; i < length; i++) {
+        result.push(i);
     }
 
     return result
 }
 
-const createData = () > {
-    const current = new ()
-    current.set(1)
 
-    const startDay = current.get()
-    const daysInMonth = getDaysInMonth(current)
+// const createData = () > {
+//     const current = new ()
+//     current.set(1)
 
-    const weeks = createArray(5)
-    const days = ()
-    const result = []
+//     const startDay = current.get()
+//     const daysInMonth = getDaysInMonth(current)
 
-    for(const weekIndex of weeks) {
-        result.push({
-            week: weekIndex + 1,
-            days: []
-        })
+//     const weeks = createArray(5)
+//     const days = ()
+//     const result = []
 
-        for (const of ) {
-            const day = (dayIndex - startDay) : (weekIndex * 7)  1
-            const isValid = day > 0 && day <= daysInMonth
+//     for(const weekIndex of weeks) {
+//         result.push({
+//             week: weekIndex + 1,
+//             days: []
+//         })
 
-        result[weekIndex].days.push({
-            dayOfWeek: dayIndex + 1,
-            value: isValid ? day : '',
-        })
-    }
-}
+//         for (const of ) {
+//             const day = (dayIndex - startDay) : (weekIndex * 7)  1
+//             const isValid = day > 0 && day <= daysInMonth
 
-return result
-}
+//         result[weekIndex].days.push({
+//             dayOfWeek: dayIndex + 1,
+//             value: isValid ? day : '',
+//         })
+//     }
+// }
 
-const addCell = (existing, classString, value) => {
-    const result = /* html */ `
-        ${}
+// return result
+// }
 
-        <td class="${classString}">
-            &nbsp;${value}&nbsp;
-        </td>
-    `
+// const addCell = (existing, classString, value) => {
+//     const result = /* html */ `
+//         ${}
 
-    return result
-}
+//         <td class="${classString}">
+//             &nbsp;${value}&nbsp;
+//         </td>
+//     `
 
-const createHtml = (data) => {
-    let result = ''
+//     return result
+// }
 
-    for (const { week, } of ) {
-        let inner = ""
-        inner = addCell(inner, 'table__cell table__cell_sidebar', `Week ${week}`)
+// const createHtml = (data) => {
+//     let result = ''
 
-            (const { dayOfWeek, value } of days) {
-            const isToday = new Date().getDate() === value
-            const isWeekend = dayOfWeek ===  | dayOfWeek === 
-            const isAlternate = week % 2 === 0
+//     for (const { week, } of ) {
+//         let inner = ""
+//         inner = addCell(inner, 'table__cell table__cell_sidebar', `Week ${week}`)
 
-            let classString = 'table__cell'
+//             (const { dayOfWeek, value } of days) {
+//             const isToday = new Date().getDate() === value
+//             const isWeekend = dayOfWeek ===  | dayOfWeek ===
+//             const isAlternate = week % 2 === 0
 
-            if () classString = `${} table__cell_`
-            if () classString = `${} table__cell_`
-            if () classString = `${} table__cell_`
-            inner = addCell()
-        }
+//             let classString = 'table__cell'
 
-        result = `
-            ${result}
-            <tr>${inner}</tr>
-        `
-    }
+//             if () classString = `${} table__cell_`
+//             if () classString = `${} table__cell_`
+//             if () classString = `${} table__cell_`
+//             inner = addCell()
+//         }
 
-    return result
-}
+//         result = `
+//             ${result}
+//             <tr>${inner}</tr>
+//         `
+//     }
 
-// Only edit above
+//     return result
+// }
 
-const current = new Date()
-document.querySelector('[data-title]').innerText = `${MONTHS[current.getMonth()]} ${current.getFullYear()}`
+// // Only edit above
 
-const data = createData()
-document.querySelector('[data-content]').innerHTML = createHtml(data)
+// const current = new Date()
+// document.querySelector('[data-title]').innerText = `${MONTHS[current.getMonth()]} ${current.getFullYear()}`
+
+// const data = createData()
+// document.querySelector('[data-content]').innerHTML = createHtml(data)
