@@ -44,21 +44,19 @@ const createData = () => {
     const current = new Date()
     current.setDate(1)
 
-    const startDay = current.getDay()
-    const daysInMonth = getDaysInMonth(current)
-
-    const weeks = createArray(5)
-    const days = current.getDay(7)
+    const startDay = current.getDay();
+    const daysInMonth = getDaysInMonth(current);
+    const weeks = Math.ceil((startDay + daysInMonth) / 7);
     const result = []
 
-    for (const weekIndex of weeks) {
+    for (let weekIndex = 0; weekIndex < weeks; weekIndex++) {
         result.push({
             week: weekIndex + 1,
             days: []
         });
 
 
-        for (const dayIndex of weeks) {
+        for (let dayIndex = 0; dayIndex < 7; dayIndex++) {
             const day = (weekIndex * 7) + dayIndex - startDay + 1;
             const isValid = day > 0 && day <= (daysInMonth);
 
