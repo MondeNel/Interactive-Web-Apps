@@ -29,7 +29,7 @@ const createArray = (length) => {
 
     return result
 }
-console.log(createArray());
+
 
 
 /**
