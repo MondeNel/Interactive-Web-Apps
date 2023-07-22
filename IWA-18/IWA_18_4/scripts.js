@@ -39,7 +39,14 @@ const handleDragStart = (event) => { }
 
 const handleDragEnd = (event) => { }
 
-const handleHelpToggle = (event) => { }
+const handleHelpToggle = (event) => {
+    const helpOverlay = document.querySelector('[data-help-overlay]');
+    if (helpOverlay.open) {
+        helpOverlay.close();
+    } else {
+        helpOverlay.showModal();
+    }
+};
 
 const handleAddToggle = (event) => { document.querySelector('[data-add-overlay]').showModal(); }
 
