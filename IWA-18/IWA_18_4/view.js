@@ -1,4 +1,4 @@
-import { TABLES, COLUMNS, state } from './data.js'
+import { TABLES, COLUMNS, state } from './data.js';
 
 /**
  * Takes any order as an object literal (as saved in state) and converts it a
@@ -38,6 +38,8 @@ export const createOrderHtml = (order) => {
 
     return element
 }
+
+
 
 /**
  * Since the tables in use, and their identification can be configured before
@@ -137,7 +139,7 @@ export const updateDraggingHtml = (newDragging) => {
  * array in "data.js"
  */
 export const moveToColumn = (id, newColumn) => {
-    const htmlSource = document.querySelector(`[data-id="${id}"]`) 
+    const htmlSource = document.querySelector(`[data-id="${id}"]`)
     const duplicate = htmlSource.cloneNode(true)
     html.columns[newColumn].appendChild(duplicate)
     htmlSource.remove()

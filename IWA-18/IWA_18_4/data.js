@@ -94,8 +94,10 @@ export const createOrderData = (props) => {
  * @param {object} newDragging 
  */
 export const updateDragging = (newDragging) => {
+
+    // state.dragging.source = null, state.dragging.over = null
     const { source = state.dragging.source, over = state.dragging.over } = newDragging
-    if (over === state.dragging.over) return
+    if (over === state.dragging.over) return // equal in value, not in type.
 
     state.dragging = {
         source,
