@@ -1,6 +1,6 @@
 import { html } from "./view.js" // (1 - solution, imported the html object).
 import { updateDraggingHtml } from "./view.js"; // (2 - solution, imported the updateDragginghtml object).
-import { TABLES } from './data.js';
+import { TABLES, createOrderData } from './data.js';
 
 
 
@@ -35,7 +35,17 @@ const handleDragOver = (event) => {
 }
 
 
-const handleDragStart = (event) => { }
+const handleDragStart = (event) => {
+    const orderId = event.target.dataset.id;
+    if (!orderId) return;
+
+    // Set the dragged order's ID and update the dragging state
+    event.dataTransfer.setData('text/plain', orderId);
+    updateDragging({ source: orderId });
+
+    // Add a CSS class to the dragged element for styling (e.g., opacity change)
+    event.target.classList.add('dragging');
+}
 
 const handleDragEnd = (event) => { }
 
@@ -48,7 +58,9 @@ const handleHelpToggle = (event) => {
     }
 };
 
-const handleAddToggle = (event) => { document.querySelector('[data-add-overlay]').showModal(); }
+const handleAddToggle = (event) => {
+    document.querySelector('[data-add-overlay]').showModal();
+}
 
 const handleAddSubmit = (event) => {
     event.preventDefault();
