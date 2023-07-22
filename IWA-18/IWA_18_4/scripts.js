@@ -20,6 +20,7 @@ import { updateDragging, createOrderData, state } from './data.js';
  */
 const handleDragOver = (event) => {
     event.preventDefault();
+    event.dataTransfer.dropEffect = 'move';
     const path = event.path || event.composedPath()
     let column = null
 
@@ -179,6 +180,7 @@ const deleteFromColumn = (columnName, orderId) => {
     }
 };
 
+
 const initializeApp = () => {
     // Populate the "Table" select options
     const tableSelect = document.querySelector('[data-add-table]');
@@ -187,6 +189,16 @@ const initializeApp = () => {
         option.value = table;
         option.innerText = table;
         tableSelect.appendChild(option);
+    }
+
+    for (const htmlColumn of Object.values(html.columns)) {
+        htmlColumn.addEventListener('dragstart', handleDragStart);
+        htmlColumn.addEventListener('dragend', handleDragEnd);
+        htmlColumn.addEventListener('dragover', handleDragOver);
+    }
+
+    for (const htmlArea of Object.values(html.area)) {
+        htmlArea.addEventListener('dragover', handleDragOver);
     }
 
     // Add event listeners to buttons and forms
@@ -202,13 +214,6 @@ const initializeApp = () => {
     html.help.cancel.addEventListener('click', handleHelpToggle);
     html.other.help.addEventListener('click', handleHelpToggle);
 
-    for (const htmlColumn of Object.values(html.columns)) {
-        htmlColumn.addEventListener('dragstart', handleDragStart);
-        htmlColumn.addEventListener('dragend', handleDragEnd);
-    }
 
-    for (const htmlArea of Object.values(html.area)) {
-        htmlArea.addEventListener('dragover', handleDragOver);
-    }
 };
 document.addEventListener('DOMContentLoaded', initializeApp);
