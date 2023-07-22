@@ -60,8 +60,14 @@ const handleHelpToggle = (event) => {
 };
 
 const handleAddToggle = (event) => {
-    document.querySelector('[data-add-overlay]').showModal();
-}
+    const addOverlay = document.querySelector('[data-add-overlay]');
+    if (addOverlay.open) {
+        addOverlay.close();
+    } else {
+        addOverlay.showModal();
+    }
+};
+
 
 const handleAddSubmit = (event) => {
     event.preventDefault();
