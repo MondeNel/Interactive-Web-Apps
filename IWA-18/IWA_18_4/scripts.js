@@ -1,6 +1,7 @@
-import { html } from "./view.js" // (1 - solution, imported the html object).
+import { html, createOrderHtml } from "./view.js" // (1 - solution, imported the html object).
 import { updateDraggingHtml } from "./view.js"; // (2 - solution, imported the updateDragginghtml object).
-import { TABLES, createOrderData } from './data.js';
+import { TABLES } from './data.js';
+import { updateDragging, createOrderData, state } from './data.js';
 
 
 
