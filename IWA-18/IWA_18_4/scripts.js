@@ -33,7 +33,7 @@ const handleDragOver = (event) => {
     updateDraggingHtml({ over: column })
 }
 
-
+/* -------------------------- handleDragStart ------------------------ */
 const handleDragStart = (event) => {
     const orderId = event.target.dataset.id;
     if (!orderId) return;
@@ -46,8 +46,20 @@ const handleDragStart = (event) => {
     event.target.classList.add('dragging');
 }
 
-const handleDragEnd = (event) => { }
 
+/* -------------------------- handleDragEnd ------------------------ */
+const handleDragEnd = (event) => {
+    updateDragging({ source: null, over: null });
+
+    updateDraggingHtml({ over: null });
+
+    if (event.dataTransfer.dropEffect === 'move') {
+        event.preventDefault();
+    }
+}
+
+
+/* -------------------------- handleHelpToggle ------------------------ */
 const handleHelpToggle = (event) => {
     const helpOverlay = document.querySelector('[data-help-overlay]');
     if (helpOverlay.open) {
@@ -57,6 +69,8 @@ const handleHelpToggle = (event) => {
     }
 };
 
+
+/* -------------------------- handleAddToggle ------------------------ */
 const handleAddToggle = (event) => {
     const addOverlay = document.querySelector('[data-add-overlay]');
     if (addOverlay.open) {
@@ -67,6 +81,7 @@ const handleAddToggle = (event) => {
 };
 
 
+/* -------------------------- handleAddSubmit ------------------------ */
 const handleAddSubmit = (event) => {
     event.preventDefault();
     const addForm = document.getElementById('add-form');
@@ -81,7 +96,7 @@ const handleAddSubmit = (event) => {
     const orderData = {
         title: titleInput.value,
         table: tableSelect.value,
-        column: 'ordered', // Set the initial column to 'ordered' when adding a new order.
+        column: 'ordered',
     };
 
     const newOrder = createOrderData(orderData);
@@ -92,7 +107,7 @@ const handleAddSubmit = (event) => {
     document.querySelector('[data-add-overlay]').close();
 };
 
-
+/* -------------------------- handleEditToggle ------------------------ */
 const handleEditToggle = (event) => {
     const targetOrder = event.target.closest('.order');
     if (!targetOrder) return;
@@ -104,6 +119,7 @@ const handleEditToggle = (event) => {
     showEditOrderDialog(order);
 }
 
+/* -------------------------- handleEditSubmit ------------------------ */
 const handleEditSubmit = (event) => {
     event.preventDefault();
     const editForm = document.getElementById('edit-form');
@@ -134,6 +150,8 @@ const handleEditSubmit = (event) => {
     document.querySelector('[data-edit-overlay]').close();
 }
 
+
+/* -------------------------- handleDelete ------------------------ */
 const handleDelete = (event) => {
     const orderIdInput = document.querySelector('[data-edit-id]');
     const orderId = orderIdInput.value;
@@ -163,12 +181,16 @@ const showEditOrderDialog = (order) => {
     document.querySelector('[data-edit-overlay]').showModal();
 };
 
+
+/* -------------------------- AddToColumn ------------------------ */
 const addToColumn = (columnName, order) => {
     const columnContent = document.querySelector(`[data-column="${columnName}"]`);
     const orderElement = createOrderHtml(order);
     columnContent.appendChild(orderElement);
 };
 
+
+/* -------------------------- deleteFromColumn ------------------------ */
 const deleteFromColumn = (columnName, orderId) => {
     const columnContent = document.querySelector(`[data-column="${columnName}"]`);
     const orderElement = columnContent.querySelector(`[data-id="${orderId}"]`);
@@ -177,7 +199,7 @@ const deleteFromColumn = (columnName, orderId) => {
     }
 };
 
-
+/* -------------------------- initializedApp ------------------------ */
 const initializeApp = () => {
 
     const tableSelect = document.querySelector('[data-add-table]');
