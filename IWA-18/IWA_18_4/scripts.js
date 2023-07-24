@@ -1,10 +1,7 @@
-import { html, createOrderHtml } from "./view.js" // (1 - solution, imported the html object).
-import { updateDraggingHtml } from "./view.js"; // (2 - solution, imported the updateDragginghtml object).
+import { html, createOrderHtml } from "./view.js"
+import { updateDraggingHtml } from "./view.js";
 import { TABLES } from './data.js';
 import { updateDragging, createOrderData, state } from './data.js';
-
-
-
 
 
 /**
@@ -182,7 +179,7 @@ const deleteFromColumn = (columnName, orderId) => {
 
 
 const initializeApp = () => {
-    // Populate the "Table" select options
+
     const tableSelect = document.querySelector('[data-add-table]');
     for (const table of TABLES) {
         const option = document.createElement('option');
