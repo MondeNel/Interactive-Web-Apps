@@ -138,12 +138,35 @@ export const updateDraggingHtml = (newDragging) => {
  * moved to. This should coincide with one of the values present in the COLUMNS
  * array in "data.js"
  */
-export const moveToColumn = (id, newColumn) => {
-    const htmlSource = document.querySelector(`[data-id="${id}"]`)
-    const duplicate = htmlSource.cloneNode(true)
-    html.columns[newColumn].appendChild(duplicate)
-    htmlSource.remove()
-}
+/**
+ * Move the order element to the target column.
+ *
+ * @param {Element} orderElement The order element to be moved.
+ * @param {string} targetColumn The target column to move the order to.
+ */
+export const moveToColumn = (orderElement, targetColumn) => {
+    // Check if the source element (orderElement) exists
+    if (!orderElement) {
+        return;
+    }
+
+    // Find the target column container based on the targetColumn value
+    const targetColumnContainer = document.querySelector(`[data-column="${targetColumn}"]`);
+
+    // Check if the target column container exists
+    if (!targetColumnContainer) {
+        return;
+    }
+
+    // Clone the order element to move it to the target column
+    const clonedOrder = orderElement.cloneNode(true);
+
+    // Remove the original order element from its current parent
+    orderElement.remove();
+
+    // Append the cloned order element to the target column container
+    targetColumnContainer.appendChild(clonedOrder);
+};
 
 /**
  * Starts the app focused on the "add order" button. This means that users can
